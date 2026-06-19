@@ -37,8 +37,8 @@ class GallerySettingsStore(context: Context) {
     }
 
     companion object {
-        const val DEFAULT_BASE_URL = "https://vrchat.maao.cc"
-        val BASE_URLS = listOf(DEFAULT_BASE_URL, "https://vrchat.marsinside.com")
+        const val DEFAULT_BASE_URL = "https://vrchat.marsinside.com"
+        val BASE_URLS = listOf(DEFAULT_BASE_URL, "https://vrchat.maao.cc")
 
         const val KEY_LANGUAGE = "language"
         const val KEY_THEME = "theme"

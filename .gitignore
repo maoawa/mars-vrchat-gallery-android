@@ -1,15 +1,29 @@
-*.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
+# Gradle
+.gradle/
+.kotlin/
+build/
+**/build/
+
+# Local machine configuration
 local.properties
+
+# Android Studio / IntelliJ
+.idea/
+!.idea/.gitignore
+*.iml
+
+# Android generated artifacts
+captures/
+.externalNativeBuild/
+.cxx/
+app/release/
+*.apk
+*.ap_
+*.aab
+
+# Signing material
+*.jks
+*.keystore
+
+# macOS
+.DS_Store

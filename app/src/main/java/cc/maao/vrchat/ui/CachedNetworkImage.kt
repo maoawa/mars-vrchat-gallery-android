@@ -16,6 +16,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.produceState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
@@ -35,6 +36,7 @@ fun CachedNetworkImage(
     modifier: Modifier = Modifier,
     contentScale: ContentScale = ContentScale.Crop,
     targetPixelSize: Int = 1_200,
+    backgroundColor: Color? = null,
 ) {
     val context = LocalContext.current
     val bitmap by produceState<Bitmap?>(initialValue = null, url, targetPixelSize) {
@@ -42,7 +44,7 @@ fun CachedNetworkImage(
     }
 
     Box(
-        modifier = modifier.background(MaterialTheme.colorScheme.surfaceVariant),
+        modifier = modifier.background(backgroundColor ?: Color(0xFF1B1B1E)),
         contentAlignment = Alignment.Center,
     ) {
         if (bitmap == null) {
@@ -62,7 +64,7 @@ fun CachedNetworkImage(
 private fun BoxScope.LoadingPlaceholder() {
     Text(
         text = "...",
-        color = MaterialTheme.colorScheme.onSurfaceVariant,
+        color = Color(0xFFC9C2BA),
         style = MaterialTheme.typography.bodyMedium,
         modifier = Modifier.align(Alignment.Center),
     )

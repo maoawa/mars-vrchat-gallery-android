@@ -13,7 +13,7 @@ import java.security.MessageDigest
 
 class GalleryRepository(
     context: Context,
-    private val baseUrl: String = "https://vrchat.maao.cc",
+    private val baseUrl: String = "https://vrchat.marsinside.com",
 ) {
     private val appContext = context.applicationContext
     private val jsonCacheDir = File(File(appContext.cacheDir, "gallery_json"), baseUrl.sha256())
